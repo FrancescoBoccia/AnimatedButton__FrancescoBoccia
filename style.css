@@ -1,0 +1,57 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f3f9;
+  height: 100vh;
+  font-family: "Muli", Arial, sans-serif;
+}
+.container {
+  position: relative;
+  width: 200px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.containerButton,
+.button {
+  border-radius: 10px;
+  background: #1462ff;
+  width: 200px;
+  height: 70px;
+}
+
+.buttonContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex-direction: row;
+  height: 70px;
+  z-index: 9;
+}
+
+.button,
+.buttonContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+span {
+  cursor: pointer;
+}
+
+.button-4:hover {
+  transition: 4s ease-in-out;
+  transform: translate(200px, 0px);
+}
