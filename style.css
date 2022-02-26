@@ -51,7 +51,7 @@ span {
   cursor: pointer;
 }
 
-.button-4:hover {
+.containerButton:hover {
   transition: 4s ease-in-out;
-  transform: translate(200px, 0px);
+  transform: translate(100%);
 }
