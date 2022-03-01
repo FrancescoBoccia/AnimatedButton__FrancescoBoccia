@@ -10,7 +10,7 @@ html {
   position: relative;
   width: 200px;
   height: 70px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .containerButton,
@@ -56,15 +56,33 @@ button {
 }
 
 .button__radius {
-  width: 35px;
-  height: 35px;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  background: transparent;
+  opacity: 0.4;
+  top: calc(50% - 60px);
+  right: -17px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
-  border-radius: 50%;
-  background-color: #4784ff;
+  align-items: center;
+  border: 1px solid red;
+  z-index: 4;
 }
 
-.button__radius:hover {
+.wave {
+  width: 30px;
+  height: 30px;
+  background: lighten(#1462ff, 10%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.wave-animation {
   animation: t-wave 599ms cubic-bezier(0.77, 0.06, 0, 0.99) forwards;
 }
 
