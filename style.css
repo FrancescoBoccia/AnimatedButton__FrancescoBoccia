@@ -10,7 +10,7 @@ html {
   position: relative;
   width: 200px;
   height: 70px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .containerButton,
@@ -27,7 +27,7 @@ html {
   right: 0;
   flex-direction: row;
   height: 70px;
-  z-index: 9;
+  /* z-index: 5; */
 }
 
 .button,
@@ -62,24 +62,22 @@ button {
   background: transparent;
   opacity: 0.4;
   top: calc(50% - 60px);
-  right: -17px;
+  left: 47.7em;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
-  z-index: 4;
+  /* z-index: 4; */
 }
 
 .wave {
   width: 30px;
   height: 30px;
-  background: lighten(#1462ff, 10%);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  background: #4784ff;
 }
 
 .wave-animation {
@@ -119,6 +117,7 @@ button {
     opacity: 0;
   }
   100% {
+    background: #1462ff;
     opacity: 0;
     width: 140px;
     height: 140px;
