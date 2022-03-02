@@ -1,85 +1,75 @@
+"use strict";
+
+// DOM MANIPULATION
+
 const containerButton = document.querySelectorAll(".insideButton");
-const arrowButton = document.querySelectorAll("button");
+const buttonContent = document.querySelector(".buttonContent");
 const animationWave = document.querySelector(".wave");
-const buttonRadius = document.querySelector(".button__radius");
-const container = document.querySelector(".button");
+const buttonRadiusAnimation = document.querySelector(".button__radius");
 
-// arrowButton.forEach((span, i) =>
-//   span.addEventListener("click", function () {
-//     if (i === 3) {
-//       buttonRadius.style.zIndex = "10";
+const order1 = document.querySelector(".order1");
+const order2 = document.querySelector(".order2");
+const order3 = document.querySelector(".order3");
+const order4 = document.querySelector(".order4");
 
-//       setTimeout(setTime, 500);
-//     }
-//     if (i === 2) {
-//       buttonRadius.style.zIndex = "10";
-//       setTimeout(setTime2, 500);
-//     }
-//     if (i === 1) {
-//       buttonRadius.style.zIndex = "10";
-//       setTimeout(setTime3, 500);
-//     }
-//     if (i === 0) {
-//       buttonRadius.style.zIndex = "10";
-//       setTimeout(setTime4, 500);
-//     }
-//     animationWave.classList.add("wave-animation");
-//     container.classList.add("shake");
-
-//     console.log(i);
-//   })
-// );
-
-// function setTime() {
-//   containerButton.style.transition = "1s ease";
-//   containerButton.style.transform = "translate(100%)";
-//   buttonRadius.style.zIndex = "-1";
-//   animationWave.classList.remove("wave-animation");
-// }
-// function setTime2() {
-//   containerButton.style.transition = "1s ease";
-//   containerButton.style.transform = "translate(200%)";
-//   buttonRadius.style.zIndex = "-1";
-//   animationWave.classList.remove("wave-animation");
-// }
-// function setTime3() {
-//   containerButton.style.transition = "1s ease";
-//   containerButton.style.transform = "translate(300%)";
-//   buttonRadius.style.zIndex = "-1";
-//   animationWave.classList.remove("wave-animation");
-// }
-// function setTime4() {
-//   containerButton.style.transition = ".1s ease";
-//   containerButton.style.transform = "translate(0%)";
-//   buttonRadius.style.zIndex = "-1";
-//   animationWave.classList.remove("wave-animation");
-// }
+// LOGIC
 
 containerButton.forEach((animation, i) => {
   animation.addEventListener("click", function () {
-    console.log(animation);
-    const index3 = document.querySelector(".index3");
-    const index2 = document.querySelector(".index2");
-    const index1 = document.querySelector(".index1");
-    const index0 = document.querySelector(".index0");
+    let pixel = 200;
 
-    if (animation.classList.contains("index3")) {
-      index3.style.transform = "translate(100%)";
-      index2.style.transform = "translate(100%)";
+    if (i == 3) {
+      addAnimation();
+      setTimeout(removeAnimation, 799);
+      setTimeout(function () {
+        buttonContent.style.transform = `translate(${pixel}px)`;
+      }, 799);
+      order1.classList.add("shake");
     }
 
-    if (animation.classList.contains("index2")) {
-      index2.style.transform = "translate(200%)";
-      index1.style.transform = "translate(200%)";
+    if (i == 2) {
+      addAnimation();
+      setTimeout(removeAnimation, 799);
+      setTimeout(function () {
+        buttonContent.style.transform = `translate(${(pixel += 200)}px)`;
+      }, 799);
+      order2.classList.add("shake");
     }
 
-    if (animation.classList.contains("index1")) {
-      index1.style.transform = "translate(300%)";
-      index0.style.transform = "translate(300%)";
+    if (i == 1) {
+      addAnimation();
+      setTimeout(removeAnimation, 799);
+      setTimeout(function () {
+        buttonContent.style.transform = `translate(${(pixel += 400)}px)`;
+      }, 799);
+      order3.classList.add("shake");
     }
 
-    if (animation.classList.contains("index0")) {
-      container.style.transform = "translate(0%)";
+    if (i == 0) {
+      buttonContent.style.order = "0";
+      addAnimation();
+      setTimeout(removeAnimation, 799);
+      setTimeout(function () {
+        buttonContent.style.transform = `translate(${(pixel -= 200)}px)`;
+      }, 799);
+      order4.classList.add("shake");
     }
   });
 });
+
+// FUNCTIONS
+
+function removeAnimation() {
+  animationWave.classList.remove("wave-animation");
+  order1.classList.remove("shake");
+  order2.classList.remove("shake");
+  order3.classList.remove("shake");
+  order4.classList.remove("shake");
+
+  buttonRadiusAnimation.style.zIndex = "-1";
+}
+
+function addAnimation() {
+  animationWave.classList.add("wave-animation");
+  buttonRadiusAnimation.style.zIndex = "4";
+}
